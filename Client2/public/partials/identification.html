@@ -1,0 +1,226 @@
+<span class="required-notification">* Required Fields</span>
+<div class="row-fluid">
+<div class="span12">
+<div class="row-fluid">
+    <div class="span10">
+        <div class="control-group">
+            <label class="control-label">Name</label>
+            <div class="controls">
+                <input id="firstName" name="firstName" ng-minlength="2" type="text" ng-class="{error: form.firstName.$invalid &&
+                      (form.firstName.$dirty || rc.form.attempted)}" class="input-medium" ui-jq="placeholder" placeholder="First Name" ng-model='model.firstName' trim uppercase required/>
+                <input id="middleName" name="middleName" type="text" class="input-medium" ui-jq="placeholder" placeholder="Middle Name" ng-model='model.middleName' trim uppercase/>
+                <input id="lastName" name="lastName" ng-minlength="2" type="text" ng-class="{error: form.lastName.$invalid &&
+                      (form.lastName.$dirty || rc.form.attempted)}" class="input-medium" ui-jq="placeholder" placeholder="Last Name" ng-model='model.lastName' trim uppercase required/>
+            </div>
+        </div>
+    </div>
+    <div class="span2">
+        <span class="group-valid group-margin-left" ng-show="(form.firstName.$valid) && (form.lastName.$valid)" ></span>
+        <span class="group_hint" ng-show="(form.firstName.$invalid && (form.firstName.$dirty || rc.form.attempted)) || (form.lastName.$invalid && (form.lastName.$dirty || rc.form.attempted))">Must be at least 2 characters</span>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span7">
+        <label class="control-label">Maiden/Alias Names</label>
+    </div>
+</div>
+<div data-ng-include data-src="'/partials/aliases.html'"></div>
+<div class="row-fluid">
+    <div class="span2">
+    </div>
+    <div class="span10 padding-left-small">
+        <button type="button" class="btn btn-small" ng-click="addAlias()"><i class="icon-plus"></i>Add Additional Name Used</button>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span5">
+        <div class="control-group">
+            <label class="control-label">Date of Birth</label>
+            <div class="controls">
+                <input type="text" autotab name="dobMonth" ng-minlength="2" ng-class="{error: form.dobMonth.$invalid &&
+                      (form.dobMonth.$dirty || rc.form.attempted)}" cnumeric maxlength="2" ui-jq="placeholder" placeholder="mm" class="input-xxsmall" ng-model='model.dobMonth' required />
+                <span>/</span>
+                <input type="text" autotab name="dobDay" ng-minlength="2" ng-class="{error: form.dobDay.$invalid &&
+                      (form.dobDay.$dirty || rc.form.attempted)}" cnumeric maxlength="2" ui-jq="placeholder" placeholder="dd" class="input-xxsmall" ng-model='model.dobDay' required />
+                <span>/</span>
+                <input type="text" name="dobYear" ng-minlength="4" ng-class="{error: form.dobYear.$invalid &&
+                      (form.dobYear.$dirty || rc.form.attempted)}" cnumeric maxlength="4" ui-jq="placeholder" placeholder="yyyy" class="input-xsmall" ng-model='model.dobYear' required />
+                <span class="form-hint" ng-show="form.dob.$invalid && form.dob.$dirty">Invalid Date and must be 13 years old</span>
+                <span class="group-valid float-right" ng-show="form.dob.$valid"></span>
+            </div>
+        </div>
+    </div>
+    <div class="span1"></div>
+    <div class="span5">
+        <div class="control-group">
+            <label class="control-label">Social Security Number</label>
+            <div class="controls">
+                <input type="text" autotab name="ssn1" cnumeric ng-minlength="3" maxlength="3" ng-class="{error: form.ssn1.$invalid &&
+                      (form.ssn1.$dirty || rc.form.attempted)}" class="input-xxsmall" ui-jq="placeholder" placeholder="xxx" ng-model='model.ssn1' required/>
+                <span>-</span>
+                <input type="text" autotab name="ssn2" cnumeric ng-minlength="2" maxlength="2" ng-class="{error: form.ssn2.$invalid &&
+                      (form.ssn2.$dirty || rc.form.attempted)}" class="input-xxsmall" ui-jq="placeholder" placeholder="xx" ng-model='model.ssn2' required/>
+                <span>-</span>
+                <input type="text" name="ssn3" cnumeric ng-minlength="4" maxlength="4" ng-class="{error: form.ssn3.$invalid &&
+                      (form.ssn3.$dirty || rc.form.attempted)}" class="input-xsmall" ui-jq="placeholder" placeholder="xxxx" ng-model='model.ssn3' required/>
+                <span class="form-hint" ng-show="(form.ssn1.$invalid && form.ssn1.$dirty) || (form.ssn2.$invalid && form.ssn2.$dirty) || (form.ssn3.$invalid && form.ssn3.$dirty)">Invalid SSN</span>
+                <span class="group-valid float-right" ng-show="(form.ssn1.$valid) && (form.ssn2.$valid) && (form.ssn3.$valid)"></span>
+            </div>
+        </div>
+    </div>
+    <div class="span1">
+        <input type="hidden" name="dob" cnumeric  class="input-xsmall" ng-model='data.dob' ui-validate="validateDOB" />
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span8">
+        <div class="control-group">
+            <label class="control-label">Driver License</label>
+            <div class="controls">
+                <select ui-select2 name="driverLicenseState" class="select-small" data-placeholder="State" ng-model="$parent.model.driverLicenseState" ng-required="!model.noLicense" ng-class="{error: form.driverLicenseState.$invalid &&
+                      (form.driverLicenseState.$dirty || rc.form.attempted)}"
+                        ng-disabled="model.noLicense">
+                    <option></option>
+                    <option value="AK">AK</option>
+                    <option value="AL">AL</option>
+                    <option value="AR">AR</option>
+                    <option value="AZ">AZ</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="IA">IA</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="MA">MA</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MO">MO</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="NE">NE</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NV">NV</option>
+                    <option value="NY">NY</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VA">VA</option>
+                    <option value="VT">VT</option>
+                    <option value="WA">WA</option>
+                    <option value="WI">WI</option>
+                    <option value="WV">WV</option>
+                    <option value="WY">WY</option>
+                </select>
+                <span class="select-required" ng-show="form.licenseState.$invalid"></span>
+                <input name="driverLicense" type="text" class="input-medium" ui-jq="placeholder" placeholder="License Number" ng-model="model.driverLicense"
+                       ng-disabled="model.noLicense" ng-required="!model.noLicense" ng-class="{error: form.driverLicense.$invalid &&
+                      (form.driverLicense.$dirty || rc.form.attempted)}" ng-pattern="/^[a-zA-Z0-9\*]+$/"  />
+                <span class="form-hint margin-left-xxlarge" ng-show="model.driverLicenseState == '' && form.validateDriverLicense.$invalid && form.validateDriverLicense.$dirty">Select Driver License State</span>
+                <span class="form-hint margin-left-xxlarge" ng-show="model.driverLicenseState != '' && form.validateDriverLicense.$invalid && form.validateDriverLicense.$dirty">Invalid Driver License</span>
+                <label class="checkbox inline inline-medium">
+                    <input type="checkbox" ng-model="model.noLicense" ng-click="noLicenseClick()">No License
+                </label>
+
+                <span class="group-valid padding-right-medium float-right" ng-show="form.validateDriverLicense.$valid || model.noLicense"></span>
+            </div>
+        </div>
+    </div>
+    <div class="span1">
+        <input type="hidden" name="validateDriverLicense" class="input-xsmall" ng-model="data.validateDriverLicense" ui-validate="validateDriverLicense" />
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span2">
+        <label class="control-label">Gender <span style="color: red" >*</span></label>
+    </div>
+    <div class="span1 padding-left-small">
+        <label class="radio">
+            <input name="genderGroup" ng-model='model.gender' type="radio" value="M" radioExtend required> Male
+        </label>
+    </div>
+    <div class="span1">
+        <label class="radio">
+            <input name="genderGroup" ng-model='model.gender' type="radio" value="F" radioExtend required> Female
+        </label>
+    </div>
+    <div class="span2">
+        <span class="group-valid gender-valid" ng-show="model.gender != '' && model.gender != undefined"></span>
+        <!--<div class="group-invalid gender-invalid " ng-show="form.gender.$invalid"></div>-->
+        <div class="form-hint" ng-show="form.genderGroup.$invalid && (form.genderGroup.$dirty || rc.form.attempted)" >Gender is required.</div>
+    </div>
+    <div class="span1">
+        <!--<input type="hidden" name="validateGender" class="input-xsmall" ng-model="data.gender" ui-validate="validateGender" />-->
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <label class="control-label">Current Address <span style="color: red" >*</span></label>
+        <span class="group-valid margin-left-small" ng-show="form.address.$valid"></span>
+        <span class="address-info">Provide addresses for the last SEVEN years: (list addresses beginning with your current address)</span>
+        <!--<span class="group-invalid margin-left-small" ng-show="form.address.$invalid"></span>-->
+    </div>
+</div>
+<div data-ng-include data-src="'/partials/addresses.html'"></div>
+<div class="row-fluid">
+    <div class="span2">
+    </div>
+    <div class="span10 padding-left-small">
+        <button type="button" class="btn btn-small" ng-click="addAddress()"><i class="icon-plus"></i>Add Additional Address</button>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span2">
+        <label class="control-label">Email</label>
+    </div>
+    <div class="span4 padding-left-small">
+        <input type="email" name="email" class="input-xlarge" ui-jq="placeholder" placeholder="Email" ng-model='model.email' ng-disabled="model.noEmail" ng-required="!model.noEmail" ng-class="{error: form.email.$invalid &&
+                      (form.email.$dirty || rc.form.attempted)}" uppercase />
+        <span class="form-hint" ng-show="form.email.$invalid && form.email.$dirty">Proper format "name@example.com"</span>
+    </div>
+    <div class="span2">
+        <div class="row-fluid padding-left-medium">
+            <label class="checkbox inline inline-max">
+                <input type="checkbox" ng-model="model.noEmail">No email
+            </label>
+        </div>
+    </div>
+    <div class="span2">
+        <span class="group-valid margin-left-small" ng-show="form.email.$valid && form.email.$dirty"></span>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+    </div>
+</div>
+</div>
+</div>

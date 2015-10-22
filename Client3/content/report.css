@@ -1,0 +1,112 @@
+table {
+    page-break-inside:avoid;
+    font-size: 12px;
+}
+tr    {
+    page-break-inside:avoid;
+    page-break-after:auto
+}
+
+.break {
+    page-break-after: always;
+}
+
+.print-container {
+    margin: 25px auto;
+    width: 800px;
+    font-size: 12px;
+}
+
+.report-table {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-spacing: 0px;
+    border: #dddddd 1px solid;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.report-data-row {
+    vertical-align: bottom;
+    height: 33px;
+    font-weight: bolder;
+}
+
+.report-number-cell {
+    width: 25px;
+}
+
+.report-info-row {
+    vertical-align: top;
+}
+
+.report-info-cell {
+    font-size: 12px;
+    vertical-align: super;
+    border-top: #dddddd 1px solid;
+}
+
+.report-spacer-cell {
+    width: 10px;
+}
+
+.report-text {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#ReportSummary p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#ReportSummary li {
+    font-size: 12px;
+}
+
+.report-auth-data {
+    padding-left: 5px;
+    border-bottom: 1px #808080 solid;
+    font-weight: bolder;
+    display: inline-block;
+    width: 245px
+}
+
+.report-signature {
+    padding-left: 5px;
+    border-bottom: 1px #808080 solid;
+    font-weight: bolder;
+    display: inline-block;
+    width: 350px
+}
+
+.report-date {
+    padding-left: 5px;
+    border-bottom: 1px #808080 solid;
+    font-weight: bolder;
+    display: inline-block;
+    width: 250px
+}
+
+.noprint {
+    display: none;
+}
+
+.print {
+    display: inline;
+}
+
+#reporttop {
+    width: 800px;
+}
+
+#reporttop img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}

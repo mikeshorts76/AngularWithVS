@@ -1,0 +1,17 @@
+html(lang='en-gb', dir='ltr')
+	head
+		title 404 - Page not found
+		block head
+
+		block css
+			link(rel='stylesheet', type='text/css', href='/css/error.css')
+
+		body#page.page
+			.center.error-404
+				h1.error
+					span
+						| 404
+				h2.title Page not found
+				p.message
+					| The Page you are looking for doesn't exist or an other error occurred.
+					a(href='https://consent.choicescreening.com') Go back to Consent Form

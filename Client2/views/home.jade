@@ -1,0 +1,37 @@
+extends layout
+append content
+    #ProgressiveEnhancement( style="display: none" )
+        h5 Choice Screening does not support the browser version you are using. Please use another browser:
+            ul
+                li
+                    a(href='https://www.google.com/chrome') Upgrade to Google Chrome
+                li
+                    a(href='http://www.mozilla.org/en-US/firefox/new/') Upgrade to Firefox
+    #Content( style="display: none" )
+        p Welcome, you have been invited by your potential employer/contractor to provide information to Choice Screening for the purpose of conducting a background check.
+        ul.welcome-points
+            li By completing the following steps you will be providing consent to your potential employer to perform a background check. Completing the information does not mean a background check will be performed.
+            li Before submitting you’re information, you will be advised of your rights under federal and state laws, which govern background screening for employment purposes.
+            li Information reported on your background check cannot be used to adversely affect your employment without providing you the opportunity to contest the accuracy of the report.
+            li The information you provide is confidential and will only be delivered to the clearly specified recipient(s) listed on the background check consent form.
+        p Please have the following information ready before filling out the online consent form.
+        ul.welcome-points
+            li Full Legal Name, Date of Birth, and Social Security Number
+            li Past Address History for the Last Seven Years.
+            li Employment History: Company Name, Office Location, and Contact information
+            li Education History: School Locations, Major, Degree, and Year of Graduation.
+        p For verification purposes, please enter in the invitation code you were provided below, and click [Start].
+        div.invitation-container
+            form.form-horizontal(method='POST', action='/')
+                div.control-group
+                    strong#invitationLabel.control-label.invitation-label Invitation Code
+                    div.controls
+                        input#activationCode(type="text", name="activationCode")
+                        button#startButton.btn.btn-primary(type="submit", style="margin-left: 10px;") Start
+
+                block scripts
+                    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                    if (clientBuild === true || clientBuild === "true")
+                        <script src="/js/#{version}/home.js"></script>
+                    else
+                        <script src="/js/home.js"></script>

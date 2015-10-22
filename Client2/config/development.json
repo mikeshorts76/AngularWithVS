@@ -1,0 +1,73 @@
+{
+  "PORT": 2000,
+  "NUM_WORKERS": 1,
+  "USE_CLIENT_BUILD": true,
+  "MONGO_URL": "mongodb://choicescreening:nuggets10@ds049347.mongolab.com:49347/consent",
+  "SECRET": "d44f48d38f3e20fca26edb6557f7b608",
+  "MESSAGING_SECRET": "d0a0b3fe1fafad647ac1bc92b98e8337",
+  "ENCRYPTION_SECRET": "e060f7a33a29c44d766d88bb0727fa18",
+  "IRON_MQ_HOST": "pro4-mq-aws-us-east-1.iron.io",
+  "IRON_MQ_PROJECT_ID": "52d5948a7aec74000900005a",
+  "IRON_MQ_TOKEN": "8Rq0SM9kP-l2WLjK6jO838XPSzg",
+  "CRON": {
+    "DEFAULT_FREQUENCY": 86400
+  },
+
+  "ENCRYPTION_DATE": "9/25/2013",
+
+  "logentries": {
+    "TOKEN": "e7cf29ed-8e30-4264-ad62-87f3c4ca5fc0",
+    "LEVEL": "debug"
+  },
+
+  "SCRIBE": {
+    "levels": [
+      {
+        "name": "web_access",
+        "color": "green"
+      },
+      {
+        "name": "debug3",
+        "color": "white"
+      },
+      {
+        "name": "debug2",
+        "color": "white"
+      },
+      {
+        "name": "debug1",
+        "color": "white"
+      },
+      {
+        "name": "info",
+        "color": "blue"
+      },
+      {
+        "name": "warn",
+        "color": "yellow"
+      },
+      {
+        "name": "error",
+        "color": "red"
+      }
+    ],
+    "transports": [
+      {
+        "type":    "file",
+        "options": {
+          "level":     "warning",
+          "timestamp": true,
+          "filename":  "/tmp/consent.log"
+        }
+      },
+      {
+        "type":    "console",
+        "options": {
+          "level":     "debug1",
+          "timestamp": true,
+          "colorize":  true
+        }
+      }
+    ]
+  }
+}

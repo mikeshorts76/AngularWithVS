@@ -1,0 +1,17 @@
+html(lang='en-gb', dir='ltr')
+	head
+		title 500 - Internal Error
+		block head
+
+		block css
+			link(rel='stylesheet', type='text/css', href='/css/error.css')
+
+		body#page.page
+			.center.error-404
+				h1.error
+					span
+						| 500
+				h2.title An error occured
+				p.message
+					| An error occurred.
+					a(href='https://consent.choicescreening.com') Go back to Consent Form

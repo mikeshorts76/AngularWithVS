@@ -1,0 +1,55 @@
+extends layout
+
+append head
+	include dataDrop
+
+append content
+	div#wizard(ng-controller="ConsentController")
+		div.wizard-progress
+			ol.steps4(ng-class="{hide: routeIs('/success') }")
+				li(ng-class="{current: routeIs('/enter/1'), complete: routeIs('/enter/2') || routeIs('/enter/3') || routeIs('/enter/4')}")
+					span.step-num 1
+					span Applicant Information
+				li(ng-class="{current: routeIs('/enter/2'), complete: routeIs('/enter/3') || routeIs('/enter/4')}")
+					span.step-num 2
+					span Employment & Education History
+				li(ng-class="{current: routeIs('/enter/3'), complete: routeIs('/enter/4')}")
+					span.step-num 3
+					span Verify Information
+				li(ng-class="{current: routeIs('/enter/4'), complete: routeIs('/enter/4')}")
+					span.step-num 4
+					span Review & Submit
+		div(ng-view)
+
+	block scripts
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		if (clientBuild === true || clientBuild === "true")
+			<script src="/js/#{version}/libs/bootstrap/bootstrap-modalmanager.min.js"></script>
+			<script src="/js/#{version}/libs/bootstrap/bootstrap-modal.min.js"></script>
+			<script src="/js/#{version}/libs/angular/angular.min.js"></script>
+			<script src="/js/#{version}/libs/angular/angular-resource.js"></script>
+			<script src="/js/#{version}/libs/angular/angular-ui.js"></script>
+			<script src="/js/#{version}/libs/select2/select2.js"></script>
+			<script src="/js/#{version}/libs/toastr/toastr.min.js"></script>
+			<script src="/js/#{version}/libs/shims/jquery.html5-placeholder-shim.js"></script>
+			<script src="/js/#{version}/app.js"></script>
+			<script src="/js/#{version}/models.js"></script>
+			<script src="/js/#{version}/utilities.js"></script>
+			<script src="/js/#{version}/controllers.js"></script>
+			<script src="/js/#{version}/directives.js"></script>
+			<script src="/js/#{version}/services.js"></script>
+		else
+			<script src='/js/libs/bootstrap/bootstrap-modalmanager.min.js'></script>
+			<script src="/js/libs/bootstrap/bootstrap-modal.min.js"></script>
+			<script src="/js/libs/angular/angular.min.js"></script>
+			<script src="/js/libs/angular/angular-resource.js"></script>
+			<script src="/js/libs/angular/angular-ui.js"></script>
+			<script src="/js/libs/select2/select2.js"></script>
+			<script src="/js/libs/toastr/toastr.min.js"></script>
+			<script src="/js/libs/shims/jquery.html5-placeholder-shim.js"></script>
+			<script src="/js/app.js"></script>
+			<script src="/js/models.js"></script>
+			<script src="/js/utilities.js"></script>
+			<script src="/js/controllers.js"></script>
+			<script src="/js/directives.js"></script>
+			<script src="/js/services.js"></script>

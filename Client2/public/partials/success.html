@@ -1,0 +1,23 @@
+<div class="container-fluid" ng-controller="SuccessController">
+    <h3>SUCCESSFUL</h3>
+    <div class="row-fluid">
+        <div class="span3">
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            <img src="../img/green_checkmark.jpg" align="" />
+        </div>
+        <div class="span6">
+                <p></p>
+            <p></p>
+                <p>
+                    Your consent form has successfully been submitted.  Please click the print link below to print a copy of the consent form.
+                </p>
+                <p>
+                    <a href="#" style="text-decoration: underline"  ng-click="printCopy()" eat-click>Print Consent Form</a>
+                </p>
+        </div>
+    </div>
+    <div id="ReportContainer" class="hide" data-ng-include data-src="'/partials/reports/signedConsent.html'" ></div>
+</div>

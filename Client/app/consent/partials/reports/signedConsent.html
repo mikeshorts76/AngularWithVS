@@ -1,0 +1,233 @@
+<div id="reporttop" class="hide print">
+    <img src="../img/logo.gif" />
+</div>
+<h4 style="text-align: center;">Background Screening Consent Form</h4>
+<div class="row-fluid">
+    <div>
+        <strong>Personal Information</strong>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <table class="table table-bordered">
+            <tr>
+                <td>First Name: <strong>{{model.Applicant.data.firstName}}</strong></td>
+                <td>Middle Name: <strong>{{model.Applicant.data.middleName}}</strong></td>
+                <td>Last Name: <strong>{{model.Applicant.data.lastName}}</strong></td>
+            </tr>
+            <tr ng:repeat="alias in model.Applicant.data.aliases">
+                <td colspan="2">Maiden Name/Other Name used: {{alias.firstName}} {{alias.lastName}}</td>
+                <td>Date Last Used: {{alias.lastUsedMonth}}{{alias.lastUsedYear}}</td>
+            </tr>
+            <tr>
+                <td colspan="3">Email Address: <strong>{{model.Applicant.data.email}}</strong></td>
+            </tr>
+            <tr>
+                <td>Social Security Number: <strong>{{model.Applicant.data.ssn1}}-{{model.Applicant.data.ssn2}}-{{model.Applicant.data.ssn3}}</strong></td>
+                <td>Date of Birth: <strong>{{model.Applicant.data.dobMonth}}/{{model.Applicant.data.dobDay}}/{{model.Applicant.data.dobYear}}</strong></td>
+                <td>Gender: <strong>{{model.Applicant.data.gender}}</strong></td>
+            </tr>
+            <tr>
+                <td colspan="2">Driver License: <strong>{{model.Applicant.data.driverLicense}}</strong></td>
+                <td>State: <strong>{{model.Applicant.data.driverLicenseState}}</strong></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row-fluid">
+    <div>
+        <span><strong>All address for the last SEVEN years</strong>: (List addresses beginning with the most recent)</span>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <table class="report-table">
+            <tbody ng:repeat="address in model.Applicant.data.addresses">
+            <tr class="report-data-row">
+                <td>&nbsp;</td>
+                <td class="report-number-cell">{{$index+1}}.</td>
+                <td class="report-data-cell" colspan="3">{{address.street}}</td>
+                <td class="report-data-cell">{{address.city}}</td>
+                <td class="report-data-cell">{{address.state}}</td>
+                <td class="report-data-cell">{{address.zip}}</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="report-info-row">
+                <td colspan="2">&nbsp;</td>
+                <td class="report-info-cell" colspan="3">Street</td>
+                <td class="report-info-cell">City</td>
+                <td class="report-info-cell">State</td>
+                <td class="report-info-cell">Zip</td>
+                <td>&nbsp;</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row-fluid">
+    <div>
+        <span><strong>7-Year Employment History</strong>: (List all employers, beginning with most recent employer)</span>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <table class="report-table">
+            <tbody ng:repeat="employment in model.History.data.employments">
+            <tr class="report-data-row">
+                <td class="report-spacer-cell">&nbsp;</td>
+                <td class="report-number-cell">{{$index+1}}.</td>
+                <td>&nbsp;</td>
+                <td class="report-data-cell" colspan="4">{{employment.company}}</td>
+                <td class="report-data-cell">{{employment.city}}</td>
+                <td class="report-data-cell">{{employment.state}}</td>
+                <td class="report-data-cell">{{employment.fromPeriod.month}}/{{employment.fromPeriod.year}}</td>
+                <td>&nbsp;-&nbsp;</td>
+                <td ng-show="!employment.toPeriod.current" class="report-data-cell">{{employment.toPeriod.month}}/{{employment.toPeriod.year}}</td>
+                <td ng-show="employment.toPeriod.current" class="report-data-cell">Current</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="report-info-row">
+                <td class="report-spacer-cell" colspan="1">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="report-info-cell" colspan="4">Company Name</td>
+                <td class="report-info-cell">City</td>
+                <td class="report-info-cell">State</td>
+                <td class="report-info-cell">From</td>
+                <td class="report-info-cell">&nbsp;</td>
+                <td class="report-info-cell">To</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="report-data-row">
+                <td colspan="3">&nbsp;</td>
+                <td class="report-data-cell" colspan="2">{{employment.position}}</td>
+                <td class="report-data-cell" colspan="2">{{employment.contactName}}</td>
+                <td class="report-data-cell">{{employment.contactEmail}}</td>
+                <td class="report-data-cell">{{employment.contactPhone}}</td>
+                <td colspan="4">&nbsp;</td>
+            </tr>
+            <tr class="report-info-row">
+                <td colspan="3">&nbsp;</td>
+                <td class="report-info-cell" colspan="2">Position</td>
+                <td class="report-info-cell" colspan="2">Contact</td>
+                <td class="report-info-cell">Email</td>
+                <td class="report-info-cell">Phone</td>
+                <td colspan="4">&nbsp;</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row-fluid">
+    <div>
+        <span><strong>Education History</strong></span>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <table class="report-table">
+            <tbody ng:repeat="education in model.History.data.educations">
+            <tr class="report-data-row">
+                <td>&nbsp;</td>
+                <td class="report-number-cell">{{$index+1}}.</td>
+                <td>&nbsp;</td>
+                <td class="report-data-cell">{{education.studentName}}</td>
+                <td class="report-data-cell" colspan="2">{{education.school}}</td>
+                <td class="report-data-cell">{{education.location}}</td>
+                <td class="report-data-cell">{{education.degree}}</td>
+                <td class="report-data-cell">{{education.major}}</td>
+                <td class="report-data-cell">{{education.degreeDate.month}}/{{education.degreeDate.year}}</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="report-info-row">
+                <td colspan="3">&nbsp;</td>
+                <td class="report-info-cell">Student Name</td>
+                <td class="report-info-cell" colspan="2">School Name</td>
+                <td class="report-info-cell">Location</td>
+                <td class="report-info-cell">Degree</td>
+                <td class="report-info-cell">Major</td>
+                <td class="report-info-cell">Degree Date</td>
+                <td>&nbsp;</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row-fluid">
+    <div style="text-align: center;">
+        <span><strong>Authorization to Release Information and Records</strong></span>
+    </div>
+</div>
+<div id="ReportSummary" class="row-fluid">
+    <div class="span12">
+        <p>I, <span class="report-auth-data">{{model.Applicant.data.firstName}} {{model.Applicant.data.middleName}} {{model.Applicant.data.lastName}}</span> (‘APPLICANT’) understand that
+            <span class="report-auth-data">{{model.Header.data.company}}</span>(‘COMPANY’) will use <strong>Choice Screening</strong>, to obtain a consumer report and/or investigative consumer report (“Report”)
+            as part of the hiring process. I also understand that if hired, to the extent permitted by law, COMPANY may obtain further Reports from Choice Screening so as to update, renew or extend my employment.
+            I authorize all persons who may have information relevant to this investigation to disclose it to Choice Screening and/or their agent. I release and agree to hold harmless all persons providing such
+            information to Choice Screening, its officers, directors, employees and agents from liability on account of such disclosure. I also release and discharge Choice Screening and its agent and associates
+            to the full extent permitted by law from any claims, damages, losses, liabilities, costs expenses or any other charge or complaint filed with any agency arising from retrieving and reporting this
+            information. I hereby further authorize that a photocopy of this authorization may be considered as valid as the original. I understand Choice Screening’s investigation may include obtaining information
+            regarding my credit background, bankruptcies, lawsuits, judgments, paid tax liens, unlawful detainer actions, failure to pay spousal or child support, accounts placed for collection, character, general
+            reputation, personal characteristics and standard of living, driving record and criminal record, subject to any limitations imposed by applicable federal and state law. I understand such information may
+            be obtained through direct or indirect contact with former employers, schools, financial institutions, landlords and public agencies or other persons who may have such knowledge. If an investigative
+            consumer report is being requested, I understand such information may be obtained through any means, including but not limited to personal interviews with my acquaintances and/or associates or with
+            others whom I am acquainted. I also authorize the National Personnel Records Center, or other custodian of my military service record, to release to Choice Screening,
+            the following information and/or copies of documents from my military service record: 00214, service record, and any disciplinary records.
+        </p>
+        <p>
+            This consent will not affect my ability to question or dispute the accuracy of any information contained in a Report. I understand if COMPANY makes a conditional decision to disqualify me based all or
+            in part on my Report, I will be provided with a copy of the Report and another copy of the Summaries of Rights, and if I disagree with the accuracy of the purported disqualifying information in the Report,
+            I must notify COMPANY within five business days of my receipt of the Report that I am challenging the accuracy of such information with Choice Screening. I hereby consent to this investigation and authorize
+            COMPANY to procure a Report on my background. In order to verify my identity for the purposes of Report preparation, I am voluntarily releasing my date of birth, social security number and the other information and
+            fully understand that all employment decisions are based on legitimate non-discriminatory reasons.
+        </p>
+        <p>
+            <label class="checkbox inline inline-max">
+                <input type="checkbox" ng-model="model.Confirm.data.requestsCopyOfReport" /><span class="report-text">If you are applying for employment or live in one of the following states: California, Maine, Massachusetts, Minnesota, New Jersey or Oklahoma and would like to request a copy of your Consumer Report please check the box.</span>
+            </label>
+        </p>
+        <p>
+            <strong>California, Connecticut, Maryland, Oregon, Vermont and Washington State Applicants Only (AS APPLICABLE)</strong>: I further understand that COMPANY will not obtain information about my credit history, credit worthiness, credit standing, or credit capacity unless: (i)
+            the information is required by law; (ii) I am seeking employment with a financial institution (California, Connecticut and Vermont only – in California the financial institution must be subject to Sections 6801-6809 of the U.S. Code and in Vermont it must be a financial
+            institution as defined in 8 V.S.A.§ 11101(32) or a credit union as defined in 8 V.S.A. § 30101(5)); (iii) I am seeking employment with a financial institution that accepts deposits that are insured by a federal agency, or an affiliate or subsidiary of the financial institution or a
+            credit union share guaranty corporation that is approved by the Maryland Commissioner of Financial Regulation or an entity or an affiliate of the entity that is registered as an investment advisor with the United States Securities and Exchange Commission (Maryland only); (iv)
+            I am seeking employment in a position which involves access to confidential financial information (Vermont only); (v) I am seeking employment in a position which requires a financial fiduciary responsibility to the employer or a client of the employer, including the authority to
+            issue payments, collect debts, transfer money, or enter into contracts (Vermont only); (vi) COMPANY can demonstrate that the information is a valid and reliable predictor of employee performance in the specific position being sought or held; (vii) I am seeking employment in a position
+            that involves access to an employer’s payroll information (Vermont only); (viii) the information is substantially job related, and the bona fide reasons for using the information are disclosed to me in writing, (Connecticut, Maryland, Oregon and Washington only);(ix) I am seeking
+            employment as a covered law enforcement officer, emergency medical personnel, firefighter police officer, peace officer or other law enforcement position (California, Oregon and Vermont only - in Oregon the police or peace officer position must be sought with a federally insured bank or
+            credit union and in Vermont the law enforcement officer position must be as defined in 20 V.S.A. § 2358, the emergency medical personnel must be as defined in 24 V.S.A. § 2651(6), and the firefighter position must be as defined in 20 V.S.A. § 3151(3)); (x) the COMPANY reasonably believes
+            I have engaged in specific activity that constitutes a violation of law related to my employment (Connecticut only); (xi) I am seeking a position with the state Department of Justice (California only); (xii) I am seeking a position as an exempt managerial employee (California only); and/or
+            (xiii)) I am seeking employment in a position (other than regular solicitation of credit card applications at a retail establishment) that involves regular access to all of the following personal information of any one person: bank or credit card account information, social security number,
+            and date of birth,, I am seeking employment in a position that requires me to be a named signatory on the employer’s bank or credit card or otherwise authorized to enter into financial contracts on behalf of the employer, I am seeking employment in a position that involves access to confidential
+            or proprietary information of the Company or regular access to $10,000 or more in cash (California only). <strong>NY Applicants Only</strong>: I acknowledge that I have received the attached copy of Article 23A of New York’s Correction Law.
+        </p>
+
+        <p>
+            The name, address and telephone number of the consumer reporting agency designated to handle inquiries regarding the investigative consumer report is: <strong>Choice Screening | 13000 E. Control Tower Rd. Suite 216, Box L3 | Englewood, CO 80112 Toll Free: <span class="blue-text">1-877-929-7878</span></strong>
+        </p>
+
+        <div class="">
+            <p class="report-text">
+                By signing below, I acknowledge receipt of the attached summary of my rights under the Fair Credit Reporting Act and, as required by law, and any related state summary of rights.
+            </p>
+            <div class="break" style="border: black solid 1px; padding: 4px">
+            <p><strong>Electronic Signature</strong></p>
+            <p><strong>Name: </strong>{{data.displayFirstName}} {{data.displayLastName}}</p>
+            <p ><strong>Applicant Signature: </strong><span style="font-family: 'Meddon', cursive; font-size: 30px" class="report-signature">{{data.displayFirstName}} {{data.displayLastName}}</span><strong>&nbsp;Date: </strong><span class="report-date">{{model.Confirm.data.submittedTimeStamp | date:'MM/dd/yyyy'}}</span></p>
+            </div>
+        </div>
+
+        <div class="hide print" data-ng-include data-src="'/partials/reports/summaryOfRights.html'"></div>
+        <div ui-modal class="modal page-container container hide noprint" ng-model="modalShown" id="creditSummary">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3>Summary of Your Rights Under the Fair Credit Reporting Act</h3>
+            </div>
+            <div class="modal-body" data-ng-include data-src="'/partials/reports/summaryOfRights.html'">
+            </div>
+            <div class="modal-footer noprint">
+                <button type="button" data-dismiss="modal" ng-click="modalShown=false" class="btn btn-primary">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

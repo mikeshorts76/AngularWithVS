@@ -1,0 +1,17 @@
+script(type='text/javascript')
+	var choice = (function() {
+		var choice = {};
+			choice.dataDrop = {
+				config: {
+				}
+			};
+
+			try {
+				choice.dataDrop.data = !{data};
+			}
+			catch (ex) {
+				console && console.log("Failed to parse dataDrop data ", ex);
+			}
+
+			return choice;
+	})();

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <form name="form" class="form-horizontal">
+        <div id="ReportContainer" ng-controller="ReviewController">
+            <div data-ng-include data-src="'/partials/reports/notSignedConsent.html'">
+        </div>
+
+        <div class="form-buttons noprint">
+            <button class="btn btn-primary" ng-click="back()">Back</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="submit()">Submit</button>
+        </div>
+    </form>
+</div>
+<script src="/js/print.js"></script>

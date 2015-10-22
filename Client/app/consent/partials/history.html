@@ -1,0 +1,40 @@
+<fieldset>
+    <legend>Employment History</legend>
+    <div class="address-info">Provide employment history for the last SEVEN years beginning with your most recent.</div>
+        <span class="opt-in">I consent to have the following employer(s) contacted for verification purposes:</span>
+    <div class="row-fluid padding-left-medium">
+        <label class="checkbox inline inline-max">
+            <input type="checkbox" ng-model="model.noEmployments">Check here if no past employment history
+        </label>
+    </div>
+    <div data-ng-include data-src="'/partials/employments.html'"></div>
+    <div class="row-fluid padding-medium">
+        <div class="span12">
+            <button type="button" class="btn btn-small" ng-click="addEmployment()" ng-disabled="noEmployments"><i class="icon-plus"></i>Add Additional Company</button>
+        </div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Education History</legend>
+    <span class="address-info">Provide education history: (beginning with your highest degree completed)</span>
+    <div class="row-fluid padding-left-medium">
+        <label class="checkbox inline inline-max">
+            <input type="checkbox" ng-model="model.noEducations">No past education history
+        </label>
+    </div>
+    <div data-ng-include data-src="'/partials/educations.html'"></div>
+    <div class="row-fluid padding-medium">
+        <div class="span10">
+            <button type="button" class="btn btn-small" ng-click="addEducation()" ng-disabled="noEducations"><i class="icon-plus"></i>Add Additional School</button>
+        </div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Professional License</legend>
+    <div data-ng-include data-src="'/partials/licenses.html'"></div>
+    <div class="row-fluid padding-medium">
+        <div class="span10">
+            <button type="button" class="btn btn-small" ng-click="addLicense()"><i class="icon-plus"></i>Add Additional License</button>
+        </div>
+    </div>
+</fieldset>

@@ -1,0 +1,623 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    margin-bottom: 1px;
+}
+
+body {
+    background: #B9B9B9 url(../img/bg-slice.jpg) repeat-x !important;
+    color: #5F5F5F;
+}
+
+table {
+    font-size: 12px;
+}
+
+.content {
+    padding: 20px;
+    background-color: white;
+}
+
+.input-xxsmall {
+    width: 30px;
+}
+
+
+.input-xsmall {
+    width: 50px;
+}
+
+.form-horizontal .control-label-small {
+    float: left;
+    width: 80px;
+    padding-top: 5px;
+    text-align: right;
+}
+
+.form-horizontal .controls-small {
+    margin-left: 90px;
+}
+
+.list-number {
+    margin-left: -20px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.history-list-number {
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.noncontrol-label {
+    padding-top: 5px;
+    text-align: right;
+}
+
+.select-small {
+    width: 80px;
+}
+
+.select-medium {
+    width: 130px;
+}
+
+.opt-in {
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+
+.padding-medium {
+    padding: 20px;
+}
+
+.padding-top-xsmall {
+    padding-top: 10px;
+}
+
+.padding-top-small {
+    padding-top: 15px;
+}
+
+.padding-right-small {
+    padding-right: 15px;
+}
+
+.padding-right-medium {
+    padding-right: 20px;
+}
+
+.padding-left-medium {
+    padding-left: 15px;
+}
+
+.padding-left-small {
+    padding-left: 10px;
+}
+
+.padding-left-xsmall {
+    padding-left: 5px;
+}
+
+.padding-right-medium {
+    padding-right: 30px;
+}
+
+.margin-left-small {
+    margin-left: 10px;
+}
+
+.margin-left-xxlarge {
+    margin-left: 100px !important;
+}
+
+.margin-minus-left-xxlarge {
+    margin-left: -100px !important;
+}
+
+.padding-top-medium {
+    padding-top: 20px;
+}
+
+.margin-top-large {
+    margin-top: 30px;
+}
+
+.padding-bottom-medium {
+    padding-bottom: 20px;
+}
+
+/*bootstrap overriding styles*/
+/*-------------------------------------------*/
+.form-horizontal .control-label {
+    width: 140px;
+}
+
+.form-horizontal .controls {
+    margin-left: 157px;
+}
+
+.form-horizontal .control-label {
+    width: 150px;
+}
+
+.form-horizontal .control-group {
+    margin-bottom: 15px;
+}
+
+.icon-plus-sign {
+    padding: 2px;
+}
+
+.input-xsmall {
+    width: 40px;;
+}
+
+.inline-medium {
+    width: 75px;
+}
+
+.inline-large {
+    width: 150px;
+}
+
+.inline-xlarge {
+    width: 250px;
+}
+
+.inline-max {
+    width: 100%;
+}
+
+.show {
+    display: block;
+}
+
+/*-------------------------------------------*/
+
+#wrapper {
+    width: 939px;
+}
+
+#main-container {
+    background: white;
+    border: 1px solid #D4D4D4;
+    display: inline-block;
+    line-height: 1.63em;
+    min-width: 900px;
+    min-height: 450px;
+    height: auto;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    -moz-box-shadow: 0px 1px 8px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0px 1px 8px rgba(0,0,0,0.15);
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
+}
+
+.invitation-container {
+    margin: 0 auto;
+    width: 500px;
+    padding-top: 20px;
+}
+
+.invitation-label{
+     color: #0365A2;
+     font-size: 16px;
+}
+
+.verify-label{
+    text-align: center;
+}
+
+#top {
+    background: url(../img/logo.gif) no-repeat center;
+    width: 939px;
+    height: 80px;
+    padding-top: 10px;
+}
+
+
+#page-wrapper {
+    width: 939px;
+}
+
+.report-container {
+    margin: 0 auto;
+    width: 800px;
+}
+
+.report-table {
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-spacing: 0px;
+    border: #dddddd 1px solid;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.report-data-row {
+    vertical-align: bottom;
+    height: 33px;
+    font-weight: bolder;
+}
+
+.report-number-cell {
+    width: 25px;
+}
+
+.report-info-row {
+    vertical-align: top;
+}
+
+.report-info-cell {
+    font-size: 12px;
+    vertical-align: super;
+    border-top: #dddddd 1px solid;
+}
+
+.report-spacer-cell {
+    width: 10px;
+}
+
+.report-text {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#ReportSummary p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#ReportSummary li {
+    font-size: 12px;
+}
+
+.report-auth-data {
+    padding-left: 5px;
+    border-bottom: 1px #808080 solid;
+    font-weight: bolder;
+    display: inline-block;
+    width: 245px
+}
+
+.red-text {
+    color: red;
+}
+
+.blue-text {
+    color: #0088cc;
+}
+
+.welcome-points {
+    padding: 10px;
+}
+
+.multi-add-button {
+    margin-left: 4px;
+}
+
+/* Show a blue border while an input has focus, make sure it overrides everything else */
+/* Overriding Twitter Bootstrap cuz I don't agree we need to alarm the user while they're typing */
+input:focus {
+    color: black !important;
+    border-color: rgba(82, 168, 236, 0.8) !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+}
+
+ol {
+    display: block;
+    list-style-type: decimal;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+/*Wizard-------------------------------*/
+
+.wizard-progress li {
+    list-style: none;
+}
+
+.wizard-progress {
+    position: relative;
+    margin: -20px -20px 0px;
+    border-bottom: 1px solid #DBEEF9;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+    padding: 20px 0 40px;
+    background-color: #F0F9FF;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.wizard-progress::before {
+    content: '';
+    position: absolute;
+    top: 34px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: 2px;
+    background: #DBEEF9;
+}
+
+.wizard-progress ol {
+    margin: 0;
+    padding: 0!important;
+}
+
+.wizard-progress .steps4 li {
+    width: 25%;
+}
+
+.wizard-progress li {
+    list-style: none; margin: 0px; padding: 0px; height: 23px; float: left; position: relative; z-index: 100;
+}
+.wizard-progress li::before {
+    background: rgb(219, 238, 249); top: 14px; height: 2px; bottom: auto; position: absolute; content: "";
+}
+.wizard-progress li::after {
+    background: rgb(219, 238, 249); top: 14px; height: 2px; bottom: auto; position: absolute; content: "";
+}
+.wizard-progress li::before {
+    left: 0px; right: 50%;
+}
+.wizard-progress li::after {
+    left: 50%; right: 0px;
+}
+.wizard-progress li.complete::before {
+    background: rgb(146, 201, 226);
+}
+.wizard-progress li.complete::after {
+    background: rgb(146, 201, 226);
+}
+.wizard-progress li.current::before {
+    background: rgb(146, 201, 226);
+}
+
+.wizard-progress .current .step-num, .wizard-progress .complete .step-num {
+    border-color: #39C;
+    background-color: #ACE0FF;
+}
+
+.wizard-progress .current span, .wizard-progress .complete span {
+    color: #39C;
+    font-weight: bold;
+}
+
+.wizard-progress .step-num {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border: 2px solid #99CCE5;
+    padding: 4px 0 0;
+    background-color: #D5EFFF;
+    font-weight: normal;
+    font-size: 1em;
+    z-index: 200;
+    -webkit-box-shadow: inset 0 0 0 1px white;
+    -moz-box-shadow: inset 0 0 0 1px #fff;
+    box-shadow: inset 0 0 0 1px white;
+}
+
+.wizard-progress span {
+    display: block;
+    padding: 5px 10px;
+    color: #9ACCE6;
+    font-size: .85em;
+    text-align: center;
+    text-shadow: 0 1px 0 white;
+}
+
+/*--------------------------------*/
+
+form fieldset {
+    position: relative;
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: #EEE;
+    padding: 0 0.5em 0.5em;
+    overflow: hidden;
+}
+
+.form-buttons {
+    margin: 0px -40px -38px;
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: #D7E7DB;
+    padding: 20px;
+    background: #EBEBEB;
+    text-align: center;
+    color: #777;
+}
+
+input.ng-invalid-required {
+     background: #fff url(../img/red_asterisk.png) no-repeat 98% center;
+ }
+
+.select-required {
+    background: #fff url(../img/red_asterisk.png) no-repeat 98% bottom;
+    margin-left: -38px;
+    margin-top: 10px;
+    padding: 6px 7px;
+    z-index: 999;
+    position: absolute;
+    display: inline;
+}
+
+.select-attempted {
+    background: #fff url(../img/invalid.png) no-repeat 98% center;
+    margin-left: -38px;
+    margin-top: 6px;
+    padding: 8px 8px;
+    z-index: 999;
+    position: absolute;
+    display: inline;
+}
+
+.required-notification {
+    color: #D45252;
+    margin: 0px 0px 15px 0;
+    display: inline;
+    float: right;
+}
+
+.group-valid {
+    background: #fff url(../img/valid.png) no-repeat;
+    width:16px;
+    height:16px;
+    float: left;
+    margin-top: 8px;
+}
+
+.group-valid-right {
+    background: #fff url(../img/valid.png) no-repeat;
+    width:16px;
+    height:16px;
+    float: right;
+    margin-top: 8px;
+}
+
+.group-invalid {
+    background: #fff url(../img/invalid.png) no-repeat;
+    width:16px;
+    height:16px;
+    float: left;
+    margin-top: 8px;
+}
+
+.group-margin-right-medium {
+    margin-right: 30px;
+}
+
+.group-margin-right-small {
+    margin-right: 10px;
+}
+
+.group-margin-left {
+    margin-left: -60px;
+}
+
+.gender-invalid {
+    margin-top: 2px;
+}
+
+.gender-valid {
+    margin-top: 2px;
+}
+
+input.error,  textarea.error {
+    background: #fff url(../img/invalid.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535
+}
+
+.required-notification {
+    color: #D45252;
+    margin: 0px 0px 15px 0;
+    display: inline;
+    float: right;
+}
+
+/* === Form hints === */
+.group_hint {
+    background: #d45252;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    margin-left:-50px;
+    padding: 1px 6px;
+    z-index: 999; /* hints stay above all other elements */
+    position: absolute; /* allows proper formatting if hint is two lines */
+    display: inline;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.form-hint {
+    background: #D45252;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    margin-left: 8px;
+    padding: 1px 6px;
+    z-index: 999;
+    position: absolute;
+    display: inline;
+}
+
+.address_hint {
+    padding-top: 5px;
+    padding-left: 15px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.address_validation_alert {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 1px 6px;
+    background: #D45252;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+}
+
+.address-info {
+    padding-left: 15px;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+    color: #808080;
+
+}
+
+.address-control-group {
+    margin-bottom: 2px;
+}
+
+.link {
+    text-decoration: underline;
+}
+/*.form_hint::before {*/
+    /*content: "\25C0";*/
+    /*color:#d45252;*/
+    /*position: absolute;*/
+    /*top:1px;*/
+    /*left:-6px;*/
+/*}*/
+
+/*input:focus + .form_hint {display: inline;}*/
+
+#FooterNav{}
+#FooterNav ul{ list-style:none; margin:0; padding:0;}
+#FooterNav ul li{ float:left; margin:0; padding:0 6px 0 0;}
+#FooterRight{ float:right; text-align:right}
+#FooterRight img{margin-top:4px;}
