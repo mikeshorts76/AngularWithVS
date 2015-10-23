@@ -47,7 +47,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Client2", "Client2\", "{C66
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Client3(1)", "Client3\", "{6CF2CE4D-E82C-4988-946D-68601A912383}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Client3", "Client3\", "{6CF2CE4D-E82C-4988-946D-68601A912383}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53723"

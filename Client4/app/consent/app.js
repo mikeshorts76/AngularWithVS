@@ -1,17 +1,17 @@
 ﻿(function () {
 
-	var module = angular.module("app", ['ngRoute', 'RouteController1']);
+	var module = angular.module("app", ['ngRoute', 'routeControllers']);
 
 	module.config(['$routeProvider',
 			function ($routeProvider) {
 				$routeProvider.
 						when('/route1', {
 							templateUrl: 'route1.html',
-							controller: 'consent/RouteController1'
+							controller: 'RouteController1'
 						}).
 						when('/route2', {
 							templateUrl: 'route2.html',
-							controller: 'RouteController2'
+							controller: 'RouteController1'
 						}).
 						otherwise({
 							redirectTo: '/'
