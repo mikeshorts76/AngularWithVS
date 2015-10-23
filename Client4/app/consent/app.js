@@ -1,21 +1,14 @@
 ﻿(function () {
 
-	var module = angular.module("app", ['ngRoute', 'routeControllers']);
+    var app = angular.module("app", ['ngRoute']);
 
-	module.config(['$routeProvider',
-			function ($routeProvider) {
-				$routeProvider.
-						when('/route1', {
-							templateUrl: 'route1.html',
-							controller: 'RouteController1'
-						}).
-						when('/route2', {
-							templateUrl: 'route2.html',
-							controller: 'RouteController1'
-						}).
-						otherwise({
-							redirectTo: '/'
-						});
+    app.config(['$routeProvider',function ($routeProvider) {
+			    $routeProvider.when('/enter/1', {templateUrl: 'app/consent/partials/step1.html', controller: ''})
+						      .when('/enter/2', { templateUrl: 'app/consent/partials/step2.html', controller: '' })
+                              .when('/enter/3', { templateUrl: 'app/consent/partials/step3.html', controller: '' })
+                              .when('/enter/4', { templateUrl: 'app/consent/partials/step4.html', controller: '' })
+                              .when('/success', { templateUrl: 'app/consent/partials/success.html', controller: '' })
+						      .otherwise({redirectTo: '/'});
 			}]);
 
 }());

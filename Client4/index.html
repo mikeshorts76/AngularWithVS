@@ -1,18 +1,39 @@
 ﻿<!DOCTYPE html>
 <html ng-app="app">
 <head>
+    
 	<title>Consent Form</title>	
 	<script src="scripts/angular.js"></script>
 	<script src="scripts/angular-route.js"></script>
     <script src="app/consent/app.js"></script>
-    <script src="app/consent/routeControllers.js"></script>
+    <link href="content/css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="content/css/bootstrap/css/bootstrap-modal.css" rel="stylesheet" />
+    <link href="content/css/select2.css" rel="stylesheet" />
+    <link href="content/css/main.css" rel="stylesheet" />
+    <link href="content/css/toastr.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<!--<body>
 
-	<a href="#/route1">Route 1</a><br />
-	<a href="#/route2">Route 2</a><br />
+	<a href="#/enter/1">Enter 1</a><br />
+	<a href="#/enter/2">Enter 2</a><br />
 
 	<div ng-view></div>
-	</body>
+</body>-->
+
+<body>
+    <div id="wrapper">
+        <div id="top">
+            <a id="logolink" href="choicescreening.com"></a>
+        </div>
+        <div ng-view></div>
+        <div id="FooterNav">
+            <ul>
+                <li>
+                    <a href="mailto:customerservice@choicescreening.com" title="Contact Us">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
 </html>
