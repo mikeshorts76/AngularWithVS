@@ -9,6 +9,6 @@
                               .when('/enter/4', { templateUrl: 'app/consent/partials/step4.html', controller: '' })
                               .when('/success', { templateUrl: 'app/consent/partials/success.html', controller: '' })
 						      .otherwise({redirectTo: '/'});
-			}]);
+			}]);    
 
 }());
