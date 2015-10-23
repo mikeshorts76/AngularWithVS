@@ -1,39 +1,91 @@
 ﻿<!DOCTYPE html>
 <html ng-app="app">
 <head>
-    
 	<title>Consent Form</title>	
+    <meta charset="utf-8">
+    <meta equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="">
+    <meta http-equiv="Expires" content="-1">
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript">
+        var choice = (function () {
+            var choice = {};
+            choice.dataDrop = {
+                config: {
+                }
+            };
+
+            try {
+                choice.dataDrop.data = !{ data };
+            }
+            catch (ex) {
+                console && console.log("Failed to parse dataDrop data ", ex);
+            }
+
+            return choice;
+        })();
+    </script>
+    <link href="content/css/toastr.min.css" rel="stylesheet" />
 	<script src="scripts/angular.js"></script>
 	<script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-resource.js"></script>   
+    <script src="app/consent/consent-controllers.js"></script>
+    <script src="app/consent/consent-models.js"></script>
+    <script src="app/consent/consent-services.js"></script>
+    <script src="app/common/directives.js"></script>
+    <script src="app/common/home.js"></script>
+    <script src="app/common/utilities.js"></script>
     <script src="app/consent/app.js"></script>
     <link href="content/css/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="content/css/bootstrap/css/bootstrap-modal.css" rel="stylesheet" />
     <link href="content/css/select2.css" rel="stylesheet" />
     <link href="content/css/main.css" rel="stylesheet" />
-    <link href="content/css/toastr.min.css" rel="stylesheet" />
+    
 </head>
-
-<!--<body>
-
-	<a href="#/enter/1">Enter 1</a><br />
-	<a href="#/enter/2">Enter 2</a><br />
-
-	<div ng-view></div>
-</body>-->
 
 <body>
     <div id="wrapper">
         <div id="top">
             <a id="logolink" href="choicescreening.com"></a>
         </div>
-        <div ng-view></div>
+        <div id="main-container">
+            <div id="wizard" ng-controller="ConsentController" class="ng-scope">
+                <div id="wizard-progress">
+                    <ol ng-class="{hide: routeIs('/success') }" class="steps4">
+                        <li ng-class="{current: routeIs('/enter/1'), complete: routeIs('/enter/2') || routeIs('/enter/3') || routeIs('/enter/4')}" class="current">
+                            <span class="step-num">1</span>
+                            <span>Applicant Information</span>
+                        </li>
+                        <li ng-class="{current: routeIs('/enter/2'), complete: routeIs('/enter/3') || routeIs('/enter/4')}" class="">
+                            <span class="step-num">2</span>
+                            <span>Employment Education History</span>
+                        </li>
+                        <li ng-class="{current: routeIs('/enter/3'), complete: routeIs('/enter/4')}" class="">
+                            <span class="step-num">3</span>
+                            <span>Verify Information</span>
+                        </li>
+                        <li ng-class="{current: routeIs('/enter/4'), complete: routeIs('/enter/4')}" class="">
+                            <span class="step-num">4</span><span>
+                                Review Submit
+                            </span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div ng-view></div>
+            
+        </div>
+        
         <div id="FooterNav">
             <ul>
                 <li>
                     <a href="mailto:customerservice@choicescreening.com" title="Contact Us">Contact Us</a>
                 </li>
+                <li>| Toll Free: 1-877-929-7878</li>
             </ul>
         </div>
+        <div id="FooterRight">© 2013 Choice Screening, Inc. All Rights Reserved.</div>        
     </div>
 </body>
 </html>
